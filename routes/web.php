@@ -7,6 +7,8 @@ use App\Models\User;
 use App\Models\Address;
 use App\Models\Employee;
 use App\Models\Department;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\StudentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -113,3 +115,12 @@ Route::get('/address', function () {  //belonsTo
 
 
 Route::get('/department',[EmployeeController::class, 'index']);
+
+
+Route::post('add-course',[CourseController::class, 'create']);
+
+Route::post('add-student',[StudentController::class, 'create']);
+
+Route::get('/',[StudentController::class, 'show']);
+
+Route::get('/',[CourseController::class, 'show']);
